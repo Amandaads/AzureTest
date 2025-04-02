@@ -9,3 +9,29 @@
                 detectedLanguage.getIso6391Name(),
                 detectedLanguage.getConfidenceScore());
     }
+
+ static void detectLanguageExample(TextAnalyticsClient client)
+    {
+        // The text to be analyzed.
+        String text = "Dieses Dokument ist in deutscher Sprache verfasst
+
+        DetectedLanguage detectedLanguage = client.detectLanguage(text);
+        System.out.printf("Detected primary language: %s, ISO 6391 name: %s, score: %.2f.%n",
+                detectedLanguage.getName(),
+                detectedLanguage.getIso6391Name(),
+                detectedLanguage.getConfidenceScore());
+    }
+
+
+ static void detectLanguageExample(TextAnalyticsClient client)
+    {
+        // The text to be analyzed.
+        String text = "Dette dokument er skrevet på dansk";
+
+        DetectedLanguage detectedLanguage = client.detectLanguage(text);
+        System.out.printf("Detected primary language: %s, ISO 6391 name: %s, score: %.2f.%n",
+                detectedLanguage.getName(),
+                detectedLanguage.getIso6391Name(),
+                detectedLanguage.getConfidenceScore());
+    }
+
