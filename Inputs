@@ -1,0 +1,11 @@
+ static void detectLanguageExample(TextAnalyticsClient client)
+    {
+        // The text to be analyzed.
+        String text = "Este documento esta escrito em Portugues";
+
+        DetectedLanguage detectedLanguage = client.detectLanguage(text);
+        System.out.printf("Detected primary language: %s, ISO 6391 name: %s, score: %.2f.%n",
+                detectedLanguage.getName(),
+                detectedLanguage.getIso6391Name(),
+                detectedLanguage.getConfidenceScore());
+    }
